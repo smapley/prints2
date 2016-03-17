@@ -171,10 +171,14 @@ public class Print extends Fragment implements View.OnClickListener {
 
                 } else if (tingYa.getText().equals(getString(R.string.tingya))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setMessage("是否清空失败的号码？");
+                    builder.setMessage("是否清空缓存的号码？");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            dataList.clear();
+                            dataList.add(baseMap);
+                            adapter.notifyDataSetChanged();
+
                             new Thread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -571,7 +575,16 @@ public class Print extends Fragment implements View.OnClickListener {
 
                         Map map = JSON.parseObject(msg.obj.toString(), new TypeReference<Map>() {
                         });
-                        getData();
+                        try {
+                            List<Map<String, String>> list2 = JSON.parseObject(map.get("tingya").toString(), new TypeReference<List<Map<String, String>>>() {
+                            });
+                            dataList1.clear();
+                            dataList1.addAll(list2);
+                            adapter1.notifyDataSetChanged();
+                            listView1.smoothScrollToPosition(adapter1.getCount() - 1);
+                        } catch (Exception e) {
+
+                        }
                         if (Integer.parseInt(map.get("count").toString()) > 0) {
                             List<Map> list = JSON.parseObject(map.get("result").toString(), new TypeReference<List<Map>>() {
                             });
@@ -581,18 +594,19 @@ public class Print extends Fragment implements View.OnClickListener {
                                 dataMap.put("count", map.get("count").toString());
                                 dataMap.put("allgold", map.get("allgold").toString());
                                 dataMap.put("allid", map.get("allid").toString());
+                                dataMap.put("riqi",map.get("riqi").toString());
                                 dataMap.put("number", resultmap.get("number").toString());
                                 dataMap.put("gold", resultmap.get("gold").toString());
                                 dataMap.put("pei", resultmap.get("pei").toString());
                                 dataMap.put("id", resultmap.get("id").toString());
+                                dataMap.put("biaoshi",resultmap.get("biaoshi").toString());
                                 dataMap.put("hotstat", "0");
                                 dataList.add(dataMap);
                             }
                             adapter.notifyDataSetChanged();
                             listView.smoothScrollToPosition(adapter.getCount() - 1);
-
-
                         }
+
                         List<Map<String, String>> list1 = JSON.parseObject(map.get("disresult").toString(), new TypeReference<List<Map<String, String>>>() {
                         });
                         String result = "";
@@ -609,6 +623,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                         }
                                     }).create().show();
                         }
+
 
 
                         break;

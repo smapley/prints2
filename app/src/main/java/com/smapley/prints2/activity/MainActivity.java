@@ -76,6 +76,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private static String title2;
     public static int position = 1;
+    public static MainActivity mainActivity;
 
 
 
@@ -96,6 +97,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         initView();
         initViewPage();
         initPrint();
+        mainActivity=this;
 
     }
 
@@ -585,6 +587,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+    }
+    public static void stop(){
+        mainActivity.finish();
     }
 
 }

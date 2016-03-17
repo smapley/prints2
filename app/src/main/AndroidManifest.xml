@@ -21,6 +21,7 @@
     <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS" />
 
     <application
+        android:name=".LocalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
@@ -47,6 +48,8 @@
         <activity
             android:name="com.smapley.prints2.activity.NumList"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activity.Gaimi"/>
 
         <service android:name="com.smapley.prints2.print.WorkService" />
 

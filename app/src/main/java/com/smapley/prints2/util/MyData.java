@@ -18,14 +18,14 @@ public class MyData {
     public static boolean Login2 = false;
 
     private static final String BASE_URL = "http://120.25.208.188/dayin/";
-    public static final String URL_INDEX1 = BASE_URL + "xiazhuG2.php";
+    public static final String URL_INDEX1 = BASE_URL + "xiazhuX1.php";
     public static final String URL_TUIMA = BASE_URL + "tuimaG4.php";
     public static final String URL_GETJILU1 = BASE_URL + "getJilu1.php";
     public static final String URL_GETJILU2 = BASE_URL + "getJilu2.php";
     public static final String URL_updateZt1 = BASE_URL + "updateZt1.php";
     public static final String URL_getSoudj = BASE_URL + "getSoudj.php";
     public static final String URL_updateZt2 = BASE_URL + "updateZt2.php";
-    public static final String URL_reg = BASE_URL + "reg.php";
+    public static final String URL_reg = BASE_URL + "reg9.php";
     public static final String URL_GETZILIAO = BASE_URL + "getZiliao.php";
     public static final String URL_UPDATAZILIAO = BASE_URL + "updateZiliao1.php";
     public static final String URL_GETMINGXI = BASE_URL + "getMingxi.php";
@@ -36,6 +36,7 @@ public class MyData {
     public static final String URL_XIAZAI = "http://www.newera98.com/dayin1.apk";
     public static final String URL_DELTINGYA =BASE_URL+"delTingya.php";
     public static final String URL_GETPEILV =BASE_URL+"getPeilv.php";
+    public static final String URL_reggaimi =BASE_URL+"reggaimi.php";
 
     /**
      * 获取服务器加密码

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.smapley.prints2.R;
+import com.smapley.prints2.activity.Gaimi;
 import com.smapley.prints2.activity.Login;
 import com.smapley.prints2.activity.SearchBTActivity;
 import com.smapley.prints2.util.HttpUtils;
@@ -40,6 +41,7 @@ public class Set extends Fragment {
     private static final int GETVERSION = 1;
     private TextView item1;
     private TextView item2;
+    private TextView item3;
     private TextView item4;
     private TextView menu1;
 
@@ -59,6 +61,7 @@ public class Set extends Fragment {
         tv_title2.setText(title);
 
         item1 = (TextView) view.findViewById(R.id.set_item1);
+        item3 = (TextView) view.findViewById(R.id.set_item3);
         item2 = (TextView) view.findViewById(R.id.set_item2);
         item4 = (TextView) view.findViewById(R.id.set_item4);
 
@@ -84,6 +87,12 @@ public class Set extends Fragment {
             }
         });
 
+        item3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Gaimi.class));
+            }
+        });
         item4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
