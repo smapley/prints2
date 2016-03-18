@@ -26,7 +26,9 @@ public class PrintAdapter extends BaseAdapter {
     private List<Map<String, String>> list;
     private LayoutInflater inflater;
     private Context context;
-    private DecimalFormat df   = new DecimalFormat("######0.0");
+    private DecimalFormat df = new DecimalFormat("######0.0");
+    private DecimalFormat dfs = new DecimalFormat("######0");
+
     public PrintAdapter(Context context, List<Map<String, String>> list) {
         this.list = list;
         this.context = context;
@@ -55,7 +57,7 @@ public class PrintAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.layout=(LinearLayout)convertView.findViewById(R.id.layout);
+            viewHolder.layout = (LinearLayout) convertView.findViewById(R.id.layout);
             viewHolder.num = (CheckBox) convertView.findViewById(R.id.list_item1);
             viewHolder.gold = (TextView) convertView.findViewById(R.id.list_item2);
             viewHolder.pei = (TextView) convertView.findViewById(R.id.list_item3);
@@ -63,29 +65,32 @@ public class PrintAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        if(map.get("hotstat").toString().equals("1")){
+        if (map.get("hotstat").toString().equals("1")) {
             viewHolder.layout.setBackgroundColor(Color.YELLOW);
-        }else{
+        } else {
             viewHolder.layout.setBackgroundColor(Color.WHITE);
         }
-        boolean check=false;
-        for(Map map1:Print.removeList){
-            if(map1.equals(map)){
-                check=true;
+        boolean check = false;
+        for (Map map1 : Print.removeList) {
+            if (map1.equals(map)) {
+                check = true;
             }
         }
-        if(position==0){
+        if (position == 0) {
             viewHolder.num.setTextColor(Color.BLACK);
             viewHolder.gold.setTextColor(Color.BLACK);
             viewHolder.pei.setTextColor(Color.BLACK);
             viewHolder.num.setText(map.get("number") + "(" + (list.size() - 1) + ")");
             double total = 0;
-            for (int i=1;i<list.size();i++) {
+            for (int i = 1; i < list.size(); i++) {
                 total = total + Double.parseDouble(list.get(i).get("gold").toString());
             }
-            viewHolder.gold.setText(map.get("gold") + "(" + (df.format(total)) + ")");
+            if (total % 1 == 0)
+                viewHolder.gold.setText(map.get("gold") + "(" + (dfs.format(total)) + ")");
+            else
+                viewHolder.gold.setText(map.get("gold") + "(" + (df.format(total)) + ")");
             viewHolder.pei.setText(map.get("pei"));
-        }else{
+        } else {
             viewHolder.num.setTextColor(context.getResources().getColor(R.color.green));
             viewHolder.gold.setTextColor(Color.RED);
             viewHolder.num.setText(map.get("number"));
@@ -97,11 +102,11 @@ public class PrintAdapter extends BaseAdapter {
         viewHolder.num.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(position==0){
+                if (position == 0) {
                     Print.check(b);
                     notifyDataSetChanged();
-                }else{
-                    Print.check(map,b);
+                } else {
+                    Print.check(map, b);
                     notifyDataSetChanged();
                 }
             }

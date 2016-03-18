@@ -37,9 +37,9 @@ public class Gaimi extends Activity {
     private ReggaimiService reggaimiService = new ReggaimiService() {
         @Override
         public void Succ(String data) {
-            int result= JSON.parseObject(data, new TypeReference<Integer>() {
+            int result = JSON.parseObject(data, new TypeReference<Integer>() {
             });
-            if(result>0){
+            if (result > 0) {
                 Toast.makeText(Gaimi.this, "修改密码成功，请重新登陆！", Toast.LENGTH_SHORT).show();
                 SharedPreferences sp_user = Gaimi.this.getSharedPreferences("user", Gaimi.this.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp_user.edit();
@@ -51,7 +51,7 @@ public class Gaimi extends Activity {
                 startActivity(new Intent(Gaimi.this, Login.class));
                 MainActivity.stop();
                 Gaimi.this.finish();
-            }else {
+            } else {
                 Toast.makeText(Gaimi.this, "修改密码失败！", Toast.LENGTH_SHORT).show();
 
             }
@@ -65,11 +65,7 @@ public class Gaimi extends Activity {
     }
 
     public void checkGaimi(View view) {
-        if (!oldmi.getText().equals("") && !newmi1.getText().equals("") && !newmi2.getText().equals("")) {
-            reggaimiService.load(new ReggaimiParams(MyData.UserName, ming.getText().toString(),oldmi.getText().toString(), newmi1.getText().toString(), newmi2.getText().toString()));
-        } else {
-            Toast.makeText(Gaimi.this, "请完善信息！", Toast.LENGTH_SHORT).show();
-        }
-    }
+        reggaimiService.load(new ReggaimiParams(MyData.UserName, ming.getText().toString(), oldmi.getText().toString(), newmi1.getText().toString(), newmi2.getText().toString()));
+}
 
 }

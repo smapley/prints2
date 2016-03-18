@@ -473,7 +473,7 @@ public class NumList extends Activity implements View.OnClickListener {
                         if (Integer.parseInt(map.get("count").toString()) > 0) {
                             Intent intent = new Intent();
                             intent.putExtra("data", msg.obj.toString());
-                            setResult(2, intent);
+                            setResult(RESULT_OK, intent);
                             finish();
                         } else {
                             Toast.makeText(NumList.this, "下注失败", Toast.LENGTH_SHORT).show();

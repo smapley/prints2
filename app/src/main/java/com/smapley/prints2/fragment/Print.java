@@ -50,7 +50,6 @@ public class Print extends Fragment implements View.OnClickListener {
     private static final int DELECTS = 2;
     private static final int ERROR = 3;
     private static final int CLEARN = 4;
-    private static final int GETPEILV = 5;
     private TextView tv_title1;
     private TextView tv_title2;
     private TextView tv_title3;
@@ -359,16 +358,6 @@ public class Print extends Fragment implements View.OnClickListener {
     }
 
     private void goJinText(boolean tag) {
-        //网络连接
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                HashMap map = new HashMap();
-                map.put("user1", MyData.UserName);
-                map.put("number", numText.getText().toString());
-                mhandler.obtainMessage(GETPEILV, HttpUtils.updata(map, MyData.URL_GETPEILV)).sendToTarget();
-            }
-        }).start();
 
         hasPoint = false;
         nowText = jineText;
@@ -537,6 +526,9 @@ public class Print extends Fragment implements View.OnClickListener {
                     case GETDATA:
                         Map map1 = JSON.parseObject(msg.obj.toString(), new TypeReference<Map>() {
                         });
+                        if(map1.get("qx").toString().equals("-99")){
+                            getActivity().finish();
+                        }
                         try {
                             List<Map<String, String>> list2 = JSON.parseObject(map1.get("res").toString(), new TypeReference<List<Map<String, String>>>() {
                             });
@@ -578,7 +570,6 @@ public class Print extends Fragment implements View.OnClickListener {
                         try {
                             List<Map<String, String>> list2 = JSON.parseObject(map.get("tingya").toString(), new TypeReference<List<Map<String, String>>>() {
                             });
-                            dataList1.clear();
                             dataList1.addAll(list2);
                             adapter1.notifyDataSetChanged();
                             listView1.smoothScrollToPosition(adapter1.getCount() - 1);
@@ -683,13 +674,6 @@ public class Print extends Fragment implements View.OnClickListener {
                         if (Integer.parseInt(map2.get("count").toString()) > 0) {
                             getData();
                         }
-                        break;
-                    case GETPEILV:
-                        Map map3 = JSON.parseObject(msg.obj.toString(), new TypeReference<Map>() {
-                        });
-                        if (tag.getText().length() != 1)
-                            tag.setText(map3.get("peilv").toString());
-                        xiane.setText(map3.get("xiane").toString());
                         break;
                 }
             } catch (Exception e) {
