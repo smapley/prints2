@@ -200,7 +200,7 @@ public class Data extends Fragment implements OnClickListener ,View.OnFocusChang
                 map.put("sanx", item53.getText().toString());
                 map.put("six", item63.getText().toString());
                 map.put("luma", mode1_state ? 1 : 0);
-                mhandler.obtainMessage(UPDATA, HttpUtils.updata(map, MyData.URL_UPDATAZILIAO)).sendToTarget();
+                mhandler.obtainMessage(UPDATA, HttpUtils.updata(map, MyData.getUrlUpdataziliao())).sendToTarget();
             }
         }).start();
     }
@@ -211,7 +211,7 @@ public class Data extends Fragment implements OnClickListener ,View.OnFocusChang
             public void run() {
                 HashMap<String, Object> map = new HashMap<String, Object>();
                 map.put("user1", MyData.UserName);
-                mhandler.obtainMessage(GETDATA, HttpUtils.updata(map, MyData.URL_GETZILIAO)).sendToTarget();
+                mhandler.obtainMessage(GETDATA, HttpUtils.updata(map, MyData.getUrlGetziliao())).sendToTarget();
             }
         }).start();
     }

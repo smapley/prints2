@@ -23,6 +23,8 @@ import com.smapley.prints2.R;
 import com.smapley.prints2.activity.Gaimi;
 import com.smapley.prints2.activity.Login;
 import com.smapley.prints2.activity.SearchBTActivity;
+import com.smapley.prints2.http.params.GetTongZhiParams;
+import com.smapley.prints2.http.service.GetTongZhiService;
 import com.smapley.prints2.util.HttpUtils;
 import com.smapley.prints2.util.MyData;
 
@@ -39,6 +41,7 @@ public class Set extends Fragment {
     private TextView tv_title2;
 
     private static final int GETVERSION = 1;
+    private TextView item0;
     private TextView item1;
     private TextView item2;
     private TextView item3;
@@ -48,10 +51,19 @@ public class Set extends Fragment {
     private ProgressDialog dialog;
     private String title = "";
 
+    private GetTongZhiService getTongZhiService=new GetTongZhiService() {
+        @Override
+        public void Succ(String data) {
+            String result=JSON.parseObject(data,new TypeReference<String>(){});
+            item0.setText(result);
+        }
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.set, container, false);
         initView(view);
+        getTongZhiService.load(new GetTongZhiParams(MyData.UserName));
         return view;
     }
 
@@ -60,6 +72,7 @@ public class Set extends Fragment {
         tv_title2 = (TextView) view.findViewById(R.id.title_item2);
         tv_title2.setText(title);
 
+        item0 = (TextView) view.findViewById(R.id.set_item0);
         item1 = (TextView) view.findViewById(R.id.set_item1);
         item3 = (TextView) view.findViewById(R.id.set_item3);
         item2 = (TextView) view.findViewById(R.id.set_item2);
@@ -81,7 +94,7 @@ public class Set extends Fragment {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        mhandler.obtainMessage(GETVERSION, HttpUtils.updata(null, MyData.URL_GENGXIN)).sendToTarget();
+                        mhandler.obtainMessage(GETVERSION, HttpUtils.updata(null, MyData.getUrlGengxin())).sendToTarget();
                     }
                 }).start();
             }
@@ -110,7 +123,7 @@ public class Set extends Fragment {
                                 HashMap map = new HashMap();
                                 map.put("user1",MyData.UserName1);
                                 map.put("user2",MyData.UserName2);
-                                mhandler.obtainMessage(LOGOUT,HttpUtils.updata(map,MyData.URL_Reg2)).sendToTarget();
+                                mhandler.obtainMessage(LOGOUT,HttpUtils.updata(map,MyData.getURL_Reg2())).sendToTarget();
                             }
                         }).start();
 

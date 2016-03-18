@@ -1,7 +1,5 @@
 package com.smapley.prints2.util;
 
-import android.text.format.Time;
-
 /**
  * Created by smapley on 2015/5/20.
  */
@@ -17,40 +15,102 @@ public class MyData {
     public static boolean Login1 = false;
     public static boolean Login2 = false;
 
-    private static final String BASE_URL = "http://120.25.208.188/dayin/";
-    public static final String URL_INDEX1 = BASE_URL + "xiazhuX1.php";
-    public static final String URL_TUIMA = BASE_URL + "tuimaG4.php";
-    public static final String URL_GETJILU1 = BASE_URL + "getJilu1.php";
-    public static final String URL_GETJILU2 = BASE_URL + "getJilu2.php";
-    public static final String URL_updateZt1 = BASE_URL + "updateZt1.php";
-    public static final String URL_getSoudj = BASE_URL + "getSoudj.php";
-    public static final String URL_updateZt2 = BASE_URL + "updateZt2.php";
-    public static final String URL_reg = BASE_URL + "reg9.php";
-    public static final String URL_GETZILIAO = BASE_URL + "getZiliao.php";
-    public static final String URL_UPDATAZILIAO = BASE_URL + "updateZiliao1.php";
-    public static final String URL_GETMINGXI = BASE_URL + "getMingxi.php";
-    public static final String URL_GETJIANG = BASE_URL + "getJiang1.php";
-    public static final String URL_GENGXIN = BASE_URL + "gengxin.php";
-    public static final String URL_Reg2 = BASE_URL + "reg2.php";
-    public static final String URL_GETZHANGDAN = BASE_URL + "getZhangdan.php";
-    public static final String URL_XIAZAI = "http://www.newera98.com/dayin1.apk";
-    public static final String URL_DELTINGYA =BASE_URL+"delTingya.php";
-    public static final String URL_reggaimi =BASE_URL+"reggaimi.php";
+    public static String IP;
 
-    /**
-     * 获取服务器加密码
-     * key
-     *
-     * @return
-     */
-    public static int getKey() {
-        int key = 0;
-        key = 1 + (int) (Math.random() * 999);
-        Time t = new Time(); // or Time t=new Time("GMT+8"); 加上Time Zone资料。
-        t.setToNow(); // 取得系统时间。
-        int date = t.monthDay;
-        return key * 789 * date;
+    private static String URL_INDEX1 = "xiazhuX1.php";
+    private static String URL_TUIMA = "tuimaG4.php";
+    private static String URL_GETJILU1 = "getJilu1.php";
+    private static String URL_GETJILU2 = "getJilu2.php";
+    private static String URL_updateZt1 = "updateZt1.php";
+    private static String URL_getSoudj = "getSoudj.php";
+    private static String URL_updateZt2 = "updateZt2.php";
+    private static String URL_reg = "reg9.php";
+    private static String URL_GETZILIAO = "getZiliao.php";
+    private static String URL_UPDATAZILIAO = "updateZiliao1.php";
+    private static String URL_GETMINGXI = "getMingxi.php";
+    private static String URL_GETJIANG = "getJiang1.php";
+    private static String URL_GENGXIN = "gengxin.php";
+    private static String URL_Reg2 = "reg2.php";
+    private static String URL_GETZHANGDAN = "getZhangdan.php";
+    private static String URL_DELTINGYA = "delTingya.php";
+    private static String URL_reggaimi = "reggaimi.php";
+    private static String URL_getTongzhi = "getTongzhi.php";
+    public static String URL_XIAZAI = "http://www.newera98.com/dayin1.apk";
+
+
+    public static String getBaseUrl() {
+        return "http://" + IP + "/dayin/";
     }
 
+    public static String getUrlIndex1() {
+        return getBaseUrl() + URL_INDEX1;
+    }
 
+    public static String getUrlTuima() {
+        return getBaseUrl() + URL_TUIMA;
+    }
+
+    public static String getUrlGetjilu1() {
+        return getBaseUrl() + URL_GETJILU1;
+    }
+
+    public static String getUrlGetjilu2() {
+        return getBaseUrl() + URL_GETJILU2;
+    }
+
+    public static String getURL_updateZt1() {
+        return getBaseUrl() + URL_updateZt1;
+    }
+
+    public static String getURL_getSoudj() {
+        return getBaseUrl() + URL_getSoudj;
+    }
+
+    public static String getURL_updateZt2() {
+        return getBaseUrl() + URL_updateZt2;
+    }
+
+    public static String getURL_reg() {
+        return getBaseUrl() + URL_reg;
+    }
+
+    public static String getUrlGetziliao() {
+        return getBaseUrl() + URL_GETZILIAO;
+    }
+
+    public static String getUrlUpdataziliao() {
+        return getBaseUrl() + URL_UPDATAZILIAO;
+    }
+
+    public static String getUrlGetmingxi() {
+        return getBaseUrl() + URL_GETMINGXI;
+    }
+
+    public static String getUrlGetjiang() {
+        return getBaseUrl() + URL_GETJIANG;
+    }
+
+    public static String getUrlGengxin() {
+        return getBaseUrl() + URL_GENGXIN;
+    }
+
+    public static String getURL_Reg2() {
+        return getBaseUrl() + URL_Reg2;
+    }
+
+    public static String getUrlGetzhangdan() {
+        return getBaseUrl() + URL_GETZHANGDAN;
+    }
+
+    public static String getUrlDeltingya() {
+        return getBaseUrl() + URL_DELTINGYA;
+    }
+
+    public static String getURL_reggaimi() {
+        return getBaseUrl() + URL_reggaimi;
+    }
+
+    public static String getURL_getTongzhi() {
+        return getBaseUrl() + URL_getTongzhi;
+    }
 }

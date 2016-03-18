@@ -158,7 +158,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                         map.put("tuima", data.substring(0, data.length() - 1));
                                         map.put("user1", MyData.UserName);
                                         map.put("mi", MyData.PassWord);
-                                        mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.URL_TUIMA)).sendToTarget();
+                                        mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
                                     }
                                 }
 
@@ -183,7 +183,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                 public void run() {
                                     HashMap map = new HashMap();
                                     map.put("user1", MyData.UserName);
-                                    mhandler.obtainMessage(CLEARN, HttpUtils.updata(map, MyData.URL_DELTINGYA)).sendToTarget();
+                                    mhandler.obtainMessage(CLEARN, HttpUtils.updata(map, MyData.getUrlDeltingya())).sendToTarget();
                                 }
                             }).start();
                         }
@@ -336,7 +336,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                     map.put("tuima", item.get("id").toString()+","+item.get("biaoshi").toString());
                                     map.put("user1", MyData.UserName);
                                     map.put("mi", MyData.PassWord);
-                                    mhandler.obtainMessage(DELECT, HttpUtils.updata(map, MyData.URL_TUIMA)).sendToTarget();
+                                    mhandler.obtainMessage(DELECT, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
                                 }
                             }).start();
 
@@ -377,7 +377,6 @@ public class Print extends Fragment implements View.OnClickListener {
 
         if (tag.getText().length() != 1)
             tag.setText("");
-        xiane.setText("");
         hasPoint = false;
         nowText = numText;
         nowText.setText(text);
@@ -485,7 +484,7 @@ public class Print extends Fragment implements View.OnClickListener {
             public void run() {
                 HashMap map = new HashMap();
                 map.put("user1", MyData.UserName);
-                mhandler.obtainMessage(GETDATA, HttpUtils.updata(map, MyData.URL_GETJILU1)).sendToTarget();
+                mhandler.obtainMessage(GETDATA, HttpUtils.updata(map, MyData.getUrlGetjilu1())).sendToTarget();
             }
         }).start();
 
@@ -511,7 +510,7 @@ public class Print extends Fragment implements View.OnClickListener {
                 map.put("sizixian", sizixian);
                 map.put("zhuan", zhuan);
                 map.put("mi", MyData.PassWord);
-                mhandler.obtainMessage(UPDATA, HttpUtils.updata(map, MyData.URL_INDEX1)).sendToTarget();
+                mhandler.obtainMessage(UPDATA, HttpUtils.updata(map, MyData.getUrlIndex1())).sendToTarget();
             }
         }).start();
     }
@@ -528,6 +527,13 @@ public class Print extends Fragment implements View.OnClickListener {
                         });
                         if(map1.get("qx").toString().equals("-99")){
                             getActivity().finish();
+                        }
+                        if(Integer.parseInt(map1.get("tihuan").toString())==1){
+                            SharedPreferences.Editor editor=sp_user.edit();
+                            editor.putString("ip",map1.get("newip").toString());
+                            editor.commit();
+                            getData();
+                            return;
                         }
                         try {
                             List<Map<String, String>> list2 = JSON.parseObject(map1.get("res").toString(), new TypeReference<List<Map<String, String>>>() {

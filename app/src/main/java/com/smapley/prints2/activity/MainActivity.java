@@ -88,7 +88,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
 
         sp_user = getSharedPreferences("user", MODE_PRIVATE);
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.dialog_item1);
         builder.setMessage(R.string.dialog_item2);
@@ -254,7 +253,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 HashMap map = new HashMap();
                 map.put("allid", allidString);
                 map.put("user1", MyData.UserName);
-                mhandler.obtainMessage(UPDATA3, HttpUtils.updata(map, MyData.URL_updateZt1)).sendToTarget();
+                mhandler.obtainMessage(UPDATA3, HttpUtils.updata(map, MyData.getURL_updateZt1())).sendToTarget();
             }
         }).start();
     }
@@ -291,9 +290,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 switch (msg.what) {
                     case CANUPDATA:
                         if (print.dataList.size() > 1) {
-                            upData(true, MyData.URL_GETJILU1);
+                            upData(true, MyData.getUrlGetjilu1());
                         } else {
-                            upData(false, MyData.URL_GETJILU1);
+                            upData(false, MyData.getUrlGetjilu1());
 
                         }
                         break;

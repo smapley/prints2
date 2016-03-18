@@ -70,7 +70,7 @@
         android:background="@drawable/chengse_select"
         android:gravity="center"
         android:padding="10dp"
-        android:text="重打"
+        android:text="重印"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
@@ -184,11 +184,11 @@
 
                 <TextView
                     style="@style/data_text1"
-                    android:text="盈亏1" />
+                    android:text="金额1" />
 
                 <TextView
                     style="@style/data_text1"
-                    android:text="盈亏2" />
+                    android:text="金额2" />
 
                 <TextView
                     style="@style/data_text1"

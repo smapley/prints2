@@ -56,6 +56,7 @@ public class Login extends Activity {
 
     private void initData() {
         sp_user = getSharedPreferences("user", MODE_PRIVATE);
+        MyData.IP = sp_user.getString("ip", "120.25.208.188");
 
         isLogin1 = sp_user.getBoolean("login1", false);
         isLogin2 = sp_user.getBoolean("login2", false);
@@ -97,7 +98,7 @@ public class Login extends Activity {
                 map.put("mi", log_st_password1);
                 map.put("zhang1", log_st_usernmae2);
                 map.put("mi1", log_st_password2);
-                mhandler.obtainMessage(1, HttpUtils.updata(map, MyData.URL_reg)).sendToTarget();
+                mhandler.obtainMessage(1, HttpUtils.updata(map, MyData.getURL_reg())).sendToTarget();
             }
         }).start();
     }

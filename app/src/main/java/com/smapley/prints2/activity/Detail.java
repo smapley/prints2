@@ -130,7 +130,7 @@ public class Detail extends Activity {
                     public void run() {
                         HashMap map = new HashMap();
                         map.put("user1", MyData.UserName);
-                        mhandler.obtainMessage(UPDATA, HttpUtils.updata(map, MyData.URL_GETJILU2)).sendToTarget();
+                        mhandler.obtainMessage(UPDATA, HttpUtils.updata(map, MyData.getUrlGetjilu2())).sendToTarget();
                     }
                 }).start();
             }
@@ -195,7 +195,7 @@ public class Detail extends Activity {
                                     map.put("tuima", data.substring(0, data.length() - 1));
                                     map.put("user1", MyData.UserName);
                                     map.put("mi", MyData.PassWord);
-                                    mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.URL_TUIMA)).sendToTarget();
+                                    mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
                                 }
 
                             }
@@ -279,7 +279,7 @@ public class Detail extends Activity {
                                             map.put("tuima", id+","+biaoshi);
                                             map.put("user1", MyData.UserName);
                                             map.put("mi", MyData.PassWord);
-                                            mhandler.obtainMessage(TUIMA, HttpUtils.updata(map, MyData.URL_TUIMA)).sendToTarget();
+                                            mhandler.obtainMessage(TUIMA, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
                                         }
                                     }).start();
                                 }
@@ -409,11 +409,11 @@ public class Detail extends Activity {
                 map.put("user1", MyData.UserName);
                 String url = null;
                 if (num == GETDATA1) {
-                    url = MyData.URL_GETMINGXI;
+                    url = MyData.getUrlGetmingxi();
                 } else if (num == GETDATA2) {
-                    url = MyData.URL_GETJIANG;
+                    url = MyData.getUrlGetjiang();
                 } else if (num == GETDATA3) {
-                    url = MyData.URL_GETZHANGDAN;
+                    url = MyData.getUrlGetzhangdan();
                 }
                 mhandler.obtainMessage(num, HttpUtils.updata(map, url)).sendToTarget();
             }

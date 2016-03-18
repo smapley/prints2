@@ -74,7 +74,7 @@ public class DuiJiang extends Activity {
                 HashMap map = new HashMap();
                 map.put("allid",allid);
                 map.put("user1",user1);
-                mhandler.obtainMessage(DUiJIANG, HttpUtils.updata(map, MyData.URL_updateZt2)).sendToTarget();
+                mhandler.obtainMessage(DUiJIANG, HttpUtils.updata(map, MyData.getURL_updateZt2())).sendToTarget();
             }
         }).start();
 
@@ -93,7 +93,7 @@ public class DuiJiang extends Activity {
                 HashMap map = new HashMap();
                 map.put("allid",allid);
                 map.put("user1",user1);
-                mhandler.obtainMessage(GETDATA, HttpUtils.updata(map, MyData.URL_getSoudj)).sendToTarget();
+                mhandler.obtainMessage(GETDATA, HttpUtils.updata(map, MyData.getURL_getSoudj())).sendToTarget();
 
             }
         }).start();

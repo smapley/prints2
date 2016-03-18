@@ -8,7 +8,6 @@ public class LocalApplication extends Application {
     private static LocalApplication instance;
 
 
-
     //单例模式中获取唯一的MyApplication实例
     public static LocalApplication getInstance() {
         if (instance == null) {

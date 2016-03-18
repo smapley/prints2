@@ -36,7 +36,7 @@
         android:layout_weight="1"
         android:background="@drawable/chengse_select"
         android:gravity="center"
-        android:text="网页"
+        android:text="资料"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
