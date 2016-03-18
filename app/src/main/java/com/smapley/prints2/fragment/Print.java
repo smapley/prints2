@@ -530,8 +530,9 @@ public class Print extends Fragment implements View.OnClickListener {
                         }
                         if(Integer.parseInt(map1.get("tihuan").toString())==1){
                             SharedPreferences.Editor editor=sp_user.edit();
-                            editor.putString("ip",map1.get("newip").toString());
+                            editor.putString("ip", map1.get("newip").toString());
                             editor.commit();
+                            MyData.IP=map1.get("newip").toString();
                             getData();
                             return;
                         }
