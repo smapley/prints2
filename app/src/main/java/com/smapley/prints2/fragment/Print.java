@@ -1,6 +1,7 @@
 package com.smapley.prints2.fragment;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,6 +36,7 @@ import com.smapley.prints2.listview.SwipeMenuListView;
 import com.smapley.prints2.print.WorkService;
 import com.smapley.prints2.util.HttpUtils;
 import com.smapley.prints2.util.MyData;
+import com.smapley.prints2.util.ThreadSleep;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -106,6 +108,7 @@ public class Print extends Fragment implements View.OnClickListener {
     public static List<Map<String, String>> removeList = new ArrayList<>();
     private static TextView tingYa;
 
+    private  long  time=0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -611,18 +614,23 @@ public class Print extends Fragment implements View.OnClickListener {
                         List<Map<String, String>> list1 = JSON.parseObject(map.get("disresult").toString(), new TypeReference<List<Map<String, String>>>() {
                         });
                         String result = "";
+                        time=0;
                         for (int i = 0; i < list1.size(); i++) {
                             result = result + list1.get(i).get("number").toString() + "\n";
+                            time=Long.parseLong(list1.get(0).get("ss").toString());
                         }
                         if (result != null && !result.equals("")) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            builder.setTitle("提示：").setMessage(result)
-                                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    }).create().show();
+                            Dialog dialog1=builder.setTitle("提示：").setMessage(result).setCancelable(false)
+                                    .setCancelable(false).create();
+                            dialog1.show();
+
+                            new ThreadSleep().sleep(time * 1000, new ThreadSleep.Callback() {
+                                @Override
+                                public void onCallback(ThreadSleep threadSleep, int number) {
+                                    dialog.dismiss();
+                                }
+                            });
                         }
 
 
