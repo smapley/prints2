@@ -52,7 +52,6 @@
         <activity android:name=".activity.Gaimi"/>
 
         <service android:name="com.smapley.prints2.print.WorkService" />
-
     </application>
 
 </manifest>

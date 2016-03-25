@@ -57,7 +57,6 @@ public class Detail extends Activity {
 
     private final int GETDATA1 = 1;
     private final int GETDATA2 = 2;
-    private final int TUIMA = 6;
     private final int UPDATA = 4;
 
     private static List<Map<String, String>> list1;
@@ -279,7 +278,7 @@ public class Detail extends Activity {
                                             map.put("tuima", id+","+biaoshi);
                                             map.put("user1", MyData.UserName);
                                             map.put("mi", MyData.PassWord);
-                                            mhandler.obtainMessage(TUIMA, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
+                                            mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
                                         }
                                     }).start();
                                 }
@@ -477,24 +476,7 @@ public class Detail extends Activity {
                         }
                         break;
 
-                    case TUIMA:
-                        int result = JSON.parseObject(msg.obj.toString(), new TypeReference<Integer>() {
-                        });
-                        switch (result) {
-                            case 1:
-                                Toast.makeText(Detail.this, "退码成功！", Toast.LENGTH_SHORT).show();
-                                getData(now_item);
-                                break;
 
-                            case -2:
-                                Toast.makeText(Detail.this, "退码已过期！", Toast.LENGTH_SHORT).show();
-                                break;
-                            default:
-                                Toast.makeText(Detail.this, "退码失败！", Toast.LENGTH_SHORT).show();
-                                break;
-                        }
-
-                        break;
                     case UPDATA:
                         dialog.dismiss();
 
@@ -689,5 +671,12 @@ public class Detail extends Activity {
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 getResources().getDisplayMetrics());
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MainActivity.mainActivity.print.getData();
     }
 }

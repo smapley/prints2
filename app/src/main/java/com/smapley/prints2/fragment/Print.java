@@ -46,7 +46,6 @@ import java.util.Map;
  */
 public class Print extends Fragment implements View.OnClickListener {
 
-    private static final int DELECT = 1;
     private static final int DELECTS = 2;
     private static final int ERROR = 3;
     private static final int CLEARN = 4;
@@ -98,7 +97,7 @@ public class Print extends Fragment implements View.OnClickListener {
     private static Map<String, String> baseMap = new HashMap<>();
     private SharedPreferences sp_user;
 
-    private String title = "已用：";
+    private String title = "";
     private String yyed = "";
     public String qishu = "";
 
@@ -336,7 +335,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                     map.put("tuima", item.get("id").toString()+","+item.get("biaoshi").toString());
                                     map.put("user1", MyData.UserName);
                                     map.put("mi", MyData.PassWord);
-                                    mhandler.obtainMessage(DELECT, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
+                                    mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
                                 }
                             }).start();
 
@@ -525,16 +524,20 @@ public class Print extends Fragment implements View.OnClickListener {
                     case GETDATA:
                         Map map1 = JSON.parseObject(msg.obj.toString(), new TypeReference<Map>() {
                         });
-                        if(map1.get("qx").toString().equals("-99")){
-                            getActivity().finish();
-                        }
-                        if(Integer.parseInt(map1.get("tihuan").toString())==1){
-                            SharedPreferences.Editor editor=sp_user.edit();
-                            editor.putString("ip", map1.get("newip").toString());
-                            editor.commit();
-                            MyData.IP=map1.get("newip").toString();
-                            getData();
-                            return;
+                        try {
+                            if (map1.get("qx").toString().equals("-99")) {
+                                getActivity().finish();
+                            }
+                            if (Integer.parseInt(map1.get("tihuan").toString()) == 1) {
+                                SharedPreferences.Editor editor = sp_user.edit();
+                                editor.putString("ip", map1.get("newip").toString());
+                                editor.commit();
+                                MyData.IP = map1.get("newip").toString();
+                                getData();
+                                return;
+                            }
+                        }catch(Exception  e){
+                            e.printStackTrace();
                         }
                         try {
                             List<Map<String, String>> list2 = JSON.parseObject(map1.get("res").toString(), new TypeReference<List<Map<String, String>>>() {
@@ -613,7 +616,7 @@ public class Print extends Fragment implements View.OnClickListener {
                         }
                         if (result != null && !result.equals("")) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            builder.setTitle("下注失败的号码：").setMessage(result)
+                            builder.setTitle("提示：").setMessage(result)
                                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -625,27 +628,7 @@ public class Print extends Fragment implements View.OnClickListener {
 
 
                         break;
-                    case DELECT:
-                        tingYa.setText(R.string.tingya);
-                        tingYa.setTextColor(Color.BLACK);
-                        removeList.clear();
-                        int result1 = JSON.parseObject(msg.obj.toString(), new TypeReference<Integer>() {
-                        });
-                        switch (result1) {
-                            case 1:
-                                Toast.makeText(getActivity(), "退码成功！", Toast.LENGTH_SHORT).show();
-                                getData();
-                                break;
 
-                            case -2:
-                                Toast.makeText(getActivity(), "退码已过期！", Toast.LENGTH_SHORT).show();
-                                break;
-                            default:
-                                Toast.makeText(getActivity(), "退码失败！", Toast.LENGTH_SHORT).show();
-                                break;
-                        }
-
-                        break;
                     case DELECTS:
                         tingYa.setText(R.string.tingya);
                         tingYa.setTextColor(Color.BLACK);

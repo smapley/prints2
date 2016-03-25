@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,6 +26,7 @@ import com.smapley.prints2.http.params.GetTongZhiParams;
 import com.smapley.prints2.http.service.GetTongZhiService;
 import com.smapley.prints2.util.HttpUtils;
 import com.smapley.prints2.util.MyData;
+import com.smapley.prints2.util.UpdateAppManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,10 +51,11 @@ public class Set extends Fragment {
     private ProgressDialog dialog;
     private String title = "";
 
-    private GetTongZhiService getTongZhiService=new GetTongZhiService() {
+    private GetTongZhiService getTongZhiService = new GetTongZhiService() {
         @Override
         public void Succ(String data) {
-            String result=JSON.parseObject(data,new TypeReference<String>(){});
+            String result = JSON.parseObject(data, new TypeReference<String>() {
+            });
             item0.setText(result);
         }
     };
@@ -121,9 +122,9 @@ public class Set extends Fragment {
                             @Override
                             public void run() {
                                 HashMap map = new HashMap();
-                                map.put("user1",MyData.UserName1);
-                                map.put("user2",MyData.UserName2);
-                                mhandler.obtainMessage(LOGOUT,HttpUtils.updata(map,MyData.getURL_Reg2())).sendToTarget();
+                                map.put("user1", MyData.UserName1);
+                                map.put("user2", MyData.UserName2);
+                                mhandler.obtainMessage(LOGOUT, HttpUtils.updata(map, MyData.getURL_Reg2())).sendToTarget();
                             }
                         }).start();
 
@@ -147,9 +148,9 @@ public class Set extends Fragment {
                         editor.putBoolean("login1", false);
                         editor.putBoolean("login2", false);
                         editor.commit();
-                        MyData.Login1=false;
-                        MyData.Login2=false;
-                        MyData.User=0;
+                        MyData.Login1 = false;
+                        MyData.Login2 = false;
+                        MyData.User = 0;
                         startActivity(new Intent(getActivity(), Login.class));
                         getActivity().finish();
                         break;
@@ -165,8 +166,9 @@ public class Set extends Fragment {
                             builder.setPositiveButton("下载更新", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(MyData.URL_XIAZAI));
-                                    startActivity(intent);
+                                    UpdateAppManager updateManager = new UpdateAppManager(getActivity());
+                                    updateManager.checkUpdateInfo();
+
                                 }
                             });
                         } else {
