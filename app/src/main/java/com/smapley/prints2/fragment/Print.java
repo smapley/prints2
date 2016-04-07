@@ -517,6 +517,7 @@ public class Print extends Fragment implements View.OnClickListener {
         }).start();
     }
 
+    private AlertDialog dialog1;
     public Handler mhandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -539,7 +540,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                 getData();
                                 return;
                             }
-                        }catch(Exception  e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                         try {
@@ -590,7 +591,7 @@ public class Print extends Fragment implements View.OnClickListener {
 
                         }
                         if (Integer.parseInt(map.get("count").toString()) > 0) {
-                            tv_title2.setText((Integer.parseInt(tv_title2.getText().toString())+Integer.parseInt(map.get("allgold").toString()))+"");
+                            tv_title2.setText((Integer.parseInt(tv_title2.getText().toString()) + Integer.parseInt(map.get("allgold").toString())) + "");
                             List<Map> list = JSON.parseObject(map.get("result").toString(), new TypeReference<List<Map>>() {
                             });
                             for (int i = 0; i < list.size(); i++) {
@@ -599,12 +600,12 @@ public class Print extends Fragment implements View.OnClickListener {
                                 dataMap.put("count", map.get("count").toString());
                                 dataMap.put("allgold", map.get("allgold").toString());
                                 dataMap.put("allid", map.get("allid").toString());
-                                dataMap.put("riqi",map.get("riqi").toString());
+                                dataMap.put("riqi", map.get("riqi").toString());
                                 dataMap.put("number", resultmap.get("number").toString());
                                 dataMap.put("gold", resultmap.get("gold").toString());
                                 dataMap.put("pei", resultmap.get("pei").toString());
                                 dataMap.put("id", resultmap.get("id").toString());
-                                dataMap.put("biaoshi",resultmap.get("biaoshi").toString());
+                                dataMap.put("biaoshi", resultmap.get("biaoshi").toString());
                                 dataMap.put("hotstat", "0");
                                 dataList.add(dataMap);
                             }
@@ -615,25 +616,24 @@ public class Print extends Fragment implements View.OnClickListener {
                         List<Map<String, String>> list1 = JSON.parseObject(map.get("disresult").toString(), new TypeReference<List<Map<String, String>>>() {
                         });
                         String result = "";
-                        time=0;
+                        time = 0;
                         for (int i = 0; i < list1.size(); i++) {
                             result = result + list1.get(i).get("number").toString() + "\n";
-                            time=Long.parseLong(list1.get(0).get("ss").toString());
+                            time = Long.parseLong(list1.get(0).get("ss").toString());
                         }
                         if (result != null && !result.equals("")) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            Dialog dialog1=builder.setTitle("提示：").setMessage(result).setCancelable(false)
+                            dialog1 = builder.setTitle("提示：").setMessage(result).setCancelable(false)
                                     .setCancelable(false).create();
                             dialog1.show();
 
                             new ThreadSleep().sleep(time * 1000, new ThreadSleep.Callback() {
                                 @Override
                                 public void onCallback(ThreadSleep threadSleep, int number) {
-                                    dialog.dismiss();
+                                    dialog1.dismiss();
                                 }
                             });
                         }
-
 
 
                         break;
