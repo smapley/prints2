@@ -101,7 +101,6 @@ public class Print extends Fragment implements View.OnClickListener {
 
     private String title = "";
     private String yyed = "";
-    public String qishu = "";
 
     private boolean hasPoint = false;
 
@@ -210,9 +209,7 @@ public class Print extends Fragment implements View.OnClickListener {
         tv_title1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Detail.class);
-                intent.putExtra("qishu", qishu);
-                startActivity(intent);
+                startActivity( new Intent(getActivity(), Detail.class));
             }
         });
         tv_title3.setOnClickListener(new View.OnClickListener() {
@@ -554,7 +551,6 @@ public class Print extends Fragment implements View.OnClickListener {
 
                         }
                         if (Integer.parseInt(map1.get("count").toString()) > 0) {
-                            qishu = map1.get("qishu").toString();
                             yyed = map1.get("yyed1").toString();
                             tv_title2.setText(title + yyed);
                             List<Map<String, String>> list = JSON.parseObject(map1.get("result").toString(), new TypeReference<List<Map<String, String>>>() {
@@ -572,7 +568,6 @@ public class Print extends Fragment implements View.OnClickListener {
                             adapter.notifyDataSetChanged();
                             yyed = map1.get("yyed1").toString();
                             tv_title2.setText(title + yyed);
-                            qishu = map1.get("qishu").toString();
                         }
 
 
@@ -588,10 +583,41 @@ public class Print extends Fragment implements View.OnClickListener {
                             adapter1.notifyDataSetChanged();
                             listView1.smoothScrollToPosition(adapter1.getCount() - 1);
                         } catch (Exception e) {
-
+                            e.printStackTrace();
                         }
+
+                        try {
+                            List<Map<String, String>> list1 = JSON.parseObject(map.get("disresult").toString(), new TypeReference<List<Map<String, String>>>() {
+                            });
+                            String result = "";
+                            time = 0;
+                            for (int i = 0; i < list1.size(); i++) {
+                                result = result + list1.get(i).get("number").toString() + "\n";
+                                time = Long.parseLong(list1.get(0).get("ss").toString());
+                            }
+                            if (result != null && !result.equals("")) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                                dialog1 = builder.setTitle("提示：").setMessage(result).setCancelable(false)
+                                        .setCancelable(false).create();
+                                dialog1.show();
+
+                                new ThreadSleep().sleep(time * 1000, new ThreadSleep.Callback() {
+                                    @Override
+                                    public void onCallback(ThreadSleep threadSleep, int number) {
+                                        dialog1.dismiss();
+                                    }
+                                });
+                            }
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
                         if (Integer.parseInt(map.get("count").toString()) > 0) {
-                            tv_title2.setText((Integer.parseInt(tv_title2.getText().toString()) + Integer.parseInt(map.get("allgold").toString())) + "");
+                            try{
+                                tv_title2.setText((Integer.parseInt(tv_title2.getText().toString()) + Integer.parseInt(map.get("allgold").toString())) + "");
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                             List<Map> list = JSON.parseObject(map.get("result").toString(), new TypeReference<List<Map>>() {
                             });
                             for (int i = 0; i < list.size(); i++) {
@@ -612,29 +638,6 @@ public class Print extends Fragment implements View.OnClickListener {
                             adapter.notifyDataSetChanged();
                             listView.smoothScrollToPosition(adapter.getCount() - 1);
                         }
-
-                        List<Map<String, String>> list1 = JSON.parseObject(map.get("disresult").toString(), new TypeReference<List<Map<String, String>>>() {
-                        });
-                        String result = "";
-                        time = 0;
-                        for (int i = 0; i < list1.size(); i++) {
-                            result = result + list1.get(i).get("number").toString() + "\n";
-                            time = Long.parseLong(list1.get(0).get("ss").toString());
-                        }
-                        if (result != null && !result.equals("")) {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            dialog1 = builder.setTitle("提示：").setMessage(result).setCancelable(false)
-                                    .setCancelable(false).create();
-                            dialog1.show();
-
-                            new ThreadSleep().sleep(time * 1000, new ThreadSleep.Callback() {
-                                @Override
-                                public void onCallback(ThreadSleep threadSleep, int number) {
-                                    dialog1.dismiss();
-                                }
-                            });
-                        }
-
 
                         break;
 
