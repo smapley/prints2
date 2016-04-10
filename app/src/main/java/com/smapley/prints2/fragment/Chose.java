@@ -623,6 +623,10 @@ public class Chose extends Fragment implements View.OnClickListener {
                 list_item.get(i).setText("");
             }
         }
+        dao1_state=false;
+        dao2_state=false;
+        dao3_state=false;
+        dao4_state=false;
         qian_state = false;
         bai_state = false;
         shi_state = false;
@@ -631,6 +635,10 @@ public class Chose extends Fragment implements View.OnClickListener {
         bai2_state = false;
         shi2_state = false;
         ge2_state = false;
+        setBack(dao1,dao1_state);
+        setBack(dao2,dao2_state);
+        setBack(dao3,dao3_state);
+        setBack(dao4,dao4_state);
         setBack(qian, qian_state);
         setBack(bai, bai_state);
         setBack(shi, shi_state);

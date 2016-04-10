@@ -50,6 +50,7 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity android:name=".activity.Gaimi"/>
+        <activity android:name=".activity.Detail2"/>
 
         <service android:name="com.smapley.prints2.print.WorkService" />
     </application>
