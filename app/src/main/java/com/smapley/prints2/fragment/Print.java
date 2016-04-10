@@ -38,6 +38,7 @@ import com.smapley.prints2.util.HttpUtils;
 import com.smapley.prints2.util.MyData;
 import com.smapley.prints2.util.ThreadSleep;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +48,9 @@ import java.util.Map;
  * Created by smapley on 15/10/23.
  */
 public class Print extends Fragment implements View.OnClickListener {
+
+    private DecimalFormat df = new DecimalFormat("######0.0");
+    private DecimalFormat dfs = new DecimalFormat("######0");
 
     private static final int DELECTS = 2;
     private static final int ERROR = 3;
@@ -107,7 +111,7 @@ public class Print extends Fragment implements View.OnClickListener {
     public static List<Map<String, String>> removeList = new ArrayList<>();
     private static TextView tingYa;
 
-    private  long  time=0;
+    private long time = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -209,7 +213,7 @@ public class Print extends Fragment implements View.OnClickListener {
         tv_title1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity( new Intent(getActivity(), Detail.class));
+                startActivity(new Intent(getActivity(), Detail.class));
             }
         });
         tv_title3.setOnClickListener(new View.OnClickListener() {
@@ -278,7 +282,7 @@ public class Print extends Fragment implements View.OnClickListener {
         keyitem14 = (TextView) view.findViewById(R.id.key_item14);
         keyitem15 = (TextView) view.findViewById(R.id.key_item15);
         tag = (TextView) view.findViewById(R.id.text_tag);
-        xiane=(TextView)view.findViewById(R.id.text_xiane);
+        xiane = (TextView) view.findViewById(R.id.text_xiane);
 
         keyitem1.setOnClickListener(this);
         keyitem2.setOnClickListener(this);
@@ -332,7 +336,7 @@ public class Print extends Fragment implements View.OnClickListener {
                                 @Override
                                 public void run() {
                                     HashMap map = new HashMap();
-                                    map.put("tuima", item.get("id").toString()+","+item.get("biaoshi").toString());
+                                    map.put("tuima", item.get("id").toString() + "," + item.get("biaoshi").toString());
                                     map.put("user1", MyData.UserName);
                                     map.put("mi", MyData.PassWord);
                                     mhandler.obtainMessage(DELECTS, HttpUtils.updata(map, MyData.getUrlTuima())).sendToTarget();
@@ -608,14 +612,18 @@ public class Print extends Fragment implements View.OnClickListener {
                                     }
                                 });
                             }
-                        }catch (Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
 
                         if (Integer.parseInt(map.get("count").toString()) > 0) {
-                            try{
-                                tv_title2.setText((Integer.parseInt(tv_title2.getText().toString()) + Integer.parseInt(map.get("allgold").toString())) + "");
-                            }catch (Exception e){
+                            try {
+                                float total =Float.parseFloat(tv_title2.getText().toString()) + Float.parseFloat(map.get("allgold").toString());
+                                if (total % 1 == 0)
+                                    tv_title2.setText( dfs.format(total));
+                                else
+                                    tv_title2.setText( df.format(total));
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
                             List<Map> list = JSON.parseObject(map.get("result").toString(), new TypeReference<List<Map>>() {
