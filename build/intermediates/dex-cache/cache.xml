@@ -2,81 +2,81 @@
 <items version="2" >
 
     <item
-        jar="E:\workSpace\prints2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\classes-55803581907009721331be019bc0345c57889acd.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\classes-b2c4a9c623d9e04be871f9f87170128bb1e519dc.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\internal_impl-23.1.0-7e4900ed378b735acb6130be4ab2574bba68f2a6.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\jars\classes.jar"
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="19026d31f5d3ae868db81319671a642be5fbba08">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\classes-2e575c0099971ab3732d678f04e09ee73e0eaeed.jar" />
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/classes-b4ebd851c2095e39f210b35b090df3bed98a2cc5.jar" />
     </item>
     <item
-        jar="E:\SDK\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\support-annotations-23.1.0-dffa7468e8ee9690263c00a657658c1ccdca036b.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\libs\javabase64-1.3.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8d6c41daabd8f7aebf65893dcbbfc18b5b78ea74">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\javabase64-1.3.1-71780c089ac4cd0255a8d8e96079d78526f6b9d0.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\libs\printerlibs.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1acf29d11e416be442a15becff4739a93a56bf3a">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\printerlibs-31c2aa92e67ffc94c411434df4b6d62b87901ffc.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\classes-912dfa3fd7961dbe684243a3c04a69050942c996.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\libs\jsoup-1.8.3.jar"
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/libs/jsoup-1.8.3.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\jsoup-1.8.3-99ef985ea3de9f0f49d2d2013573966690e17070.jar" />
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/jsoup-1.8.3-741df310986af879feff51004c60eabe0f958114.jar" />
     </item>
     <item
-        jar="E:\workSpace\prints2\app\libs\fastjson-1.1.22.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1744ecd7f8716ac83381f2b8f5bd002365ccdca9">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\fastjson-1.1.22-18f94469c0e1b2e0079d7a44797b43bb101cbd26.jar" />
-    </item>
-    <item
-        jar="E:\workSpace\prints2\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.22\jars\classes.jar"
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/exploded-aar/org.xutils/xutils/3.3.22/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="57efca11519151f131f4980f939b71793284278f">
-        <dex dex="E:\workSpace\prints2\app\build\intermediates\pre-dexed\release\classes-c0ff5ab3d84c082432d4de643882d94d3c4f8f5a.jar" />
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/classes-310ea5836c9a9e9ded25df0323e59d223a76ebe3.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-226685376150576e1bd466d2b09b9d33eba245a0.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/classes-95a46ce4653803930dfb845a7df8b5ddfcef5624.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/libs/printerlibs.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1acf29d11e416be442a15becff4739a93a56bf3a">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/printerlibs-c99cd0787cc5abb86e101bd496fd2b891fb46676.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/libs/javabase64-1.3.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d6c41daabd8f7aebf65893dcbbfc18b5b78ea74">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/javabase64-1.3.1-0cb1072975168a358f22de1126da553099903408.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-5861c54534eabd4bff30cdb734504a4a6c44aec5.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/classes-63ae3a8fd2cc32e8924b9fc80a611af60f1d484c.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/classes-b4f2d4a8e65af08afd0b7db90b5554d1f3b5cbc5.jar" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/WorkSpace/prints2/app/libs/fastjson-1.1.22.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1744ecd7f8716ac83381f2b8f5bd002365ccdca9">
+        <dex dex="/Users/smapley/Desktop/WorkSpace/prints2/app/build/intermediates/pre-dexed/debug/fastjson-1.1.22-3c9398e4d06f1d8ee1a8a4f41be2cb98f3fe79a1.jar" />
     </item>
 
 </items>

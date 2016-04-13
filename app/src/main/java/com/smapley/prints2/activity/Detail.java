@@ -94,7 +94,6 @@ public class Detail extends Activity {
     private LinearLayout lin2;
     private LinearLayout lin2s;
 
-    public static List<Map> removeList = new ArrayList<>();
     private TextView delect;
 
     @Override
