@@ -2,81 +2,95 @@
 <items version="2" >
 
     <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\libs\jsoup-1.8.3.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\jsoup-1.8.3-aadf425231e565f5cf7a504f5793a10e51e76a99.jar" />
-    </item>
-    <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\classes-d2f65f6cb6f93a11688c1837331ed355f3018910.jar" />
-    </item>
-    <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\classes-b8720638f0cadd81e8da45101a6fbe36da96f370.jar" />
-    </item>
-    <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\internal_impl-23.1.0-c46ec96bcbfa4c725df88b9508ca767735d0aa06.jar" />
-    </item>
-    <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.22\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="57efca11519151f131f4980f939b71793284278f">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\classes-aacf09ebb9c5cc3d7d6874af808e5bf4ed1f4c0e.jar" />
-    </item>
-    <item
-        jar="D:\SDK\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\support-annotations-23.1.0-edac7719713beec49d9aa14e3050935de4afb86b.jar" />
-    </item>
-    <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\classes-fa661b8117f805cd13f3c2e33ce865e61f5e77b5.jar" />
-    </item>
-    <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\libs\fastjson-1.1.22.jar"
-        jumboMode="false"
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/libs/fastjson-1.1.22.jar"
+        jumboMode="true"
         revision="23.0.1"
         sha1="1744ecd7f8716ac83381f2b8f5bd002365ccdca9">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\fastjson-1.1.22-fff6f1d53d33cf23ed226cbe83eb971d456046ad.jar" />
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/2/fastjson-1.1.22_91b3e3758960e9b4f8a7fabb9e82535366c5ec43/classes.dex" />
     </item>
     <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\jars\classes.jar"
-        jumboMode="false"
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
+        jumboMode="true"
         revision="23.0.1"
         sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\classes-cb66a08aae040424c50d011c2d170cf9ff112aa9.jar" />
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.0_26ec62e82457ad48fc9a52155119eb8af14d173b/classes.dex" />
     </item>
     <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\libs\printerlibs.jar"
-        jumboMode="false"
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
+        jumboMode="true"
         revision="23.0.1"
-        sha1="1acf29d11e416be442a15becff4739a93a56bf3a">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\printerlibs-cb259c1acf8a4bf5b8dba42c05a4131e11887db5.jar" />
+        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.0_7727ac3cc03d5ff24aea8a4cd9a8c8e6b2e31d51/classes.dex" />
     </item>
     <item
-        jar="D:\WorkSpace\Android\prints_denglu\app\libs\javabase64-1.3.1.jar"
-        jumboMode="false"
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/exploded-aar/org.xutils/xutils/3.3.22/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="57efca11519151f131f4980f939b71793284278f">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.xutils-xutils-3.3.22_1ecd558e29d561bc8f0c44f1d25634de237316ce/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/libs/javabase64-1.3.1.jar"
+        jumboMode="true"
         revision="23.0.1"
         sha1="8d6c41daabd8f7aebf65893dcbbfc18b5b78ea74">
-        <dex dex="D:\WorkSpace\Android\prints_denglu\app\build\intermediates\pre-dexed\release\javabase64-1.3.1-0b6a5857257209206003ea6268f9d484900b6941.jar" />
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/2/javabase64-1.3.1_41040d22139e7501d42be14bcc33f41073a9bdfa/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.0_2be66231e911f0ac309191fa466443b81a21c6a2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.0_226685376150576e1bd466d2b09b9d33eba245a0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="faa505347910ddbeda4738181ffa2a493d4da4d7">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ef5dabd134391e7498eac19f279a78a871ad1ab0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="e9ed07808e73ae90f0bc7232ba95e8df576bbaa3">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ab4bf84361a36fbe512a64bfb20d117153a157fa/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.0_c67da82ac9074e658375a5dab4ea89803abc4f9c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.0_9b17969ebcf7fddc319028b7dd5e5d3d873911f9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/libs/printerlibs.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="1acf29d11e416be442a15becff4739a93a56bf3a">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/2/printerlibs_2cc03a270ffb7a52dccd9439771819f2bd9ba032/classes.dex" />
+    </item>
+    <item
+        jar="/Users/smapley/Desktop/Android/prints_denglu/app/libs/jsoup-1.8.3.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
+        <dex dex="/Users/smapley/Desktop/Android/prints_denglu/app/build/intermediates/transforms/dex/debug/folders/1000/2/jsoup-1.8.3_17f0da4e249be1e9a9f844692e0b6b6feff7722e/classes.dex" />
     </item>
 
 </items>
