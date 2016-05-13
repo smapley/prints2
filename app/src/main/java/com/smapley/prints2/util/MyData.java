@@ -22,7 +22,7 @@ public class MyData {
     private static String URL_GETJILU1 = "getJilu1.php";
     private static String URL_DAYIN= "dayin.php";
     private static String URL_GETJILU2 = "getJilu2.php";
-    private static String URL_updateZt1 = "updateZt1.php";
+    private static String URL_updateZt1 = "updateZtG1.php";
     private static String URL_getSoudj = "getSoudj.php";
     private static String URL_updateZt2 = "updateZt2.php";
     private static String URL_reg = "reg9.php";

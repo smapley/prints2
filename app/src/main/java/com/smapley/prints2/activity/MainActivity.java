@@ -251,7 +251,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             @Override
             public void run() {
                 HashMap map = new HashMap();
-                map.put("allid", allidString);
+//                map.put("allid", allidString);
                 map.put("user1", MyData.UserName);
                 mhandler.obtainMessage(UPDATA3, HttpUtils.updata(map, MyData.getURL_updateZt1())).sendToTarget();
             }
